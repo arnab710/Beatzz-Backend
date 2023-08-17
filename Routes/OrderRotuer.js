@@ -1,6 +1,6 @@
 const express = require('express');
-const { AuthCheck, RoleCheck } = require('../Controllers/AuthController');
-const { GetAllUsersOrders, GetMyOrder } = require('../Controllers/OrderController');
+const { AuthCheck, RoleCheck } = require('../Controllers/AuthController.js');
+const { GetAllUsersOrders, GetMyOrder } = require('../Controllers/OrderController.js');
 
 const OrderRouter = express.Router();
 

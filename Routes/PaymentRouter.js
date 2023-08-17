@@ -1,6 +1,6 @@
 const express = require('express');
-const { CheckOutSession } = require('../Controllers/PaymentController');
-const { AuthCheck } = require('../Controllers/AuthController');
+const { CheckOutSession } = require('../Controllers/PaymentController.js');
+const { AuthCheck } = require('../Controllers/AuthController.js');
 
 
 const PaymentRouter = express.Router();

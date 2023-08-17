@@ -1,6 +1,6 @@
 const express = require('express');
-const { AuthCheck } = require('../Controllers/AuthController');
-const { GetProductReviews, CreateReview, UpdateMyReview, DeleteMyReview, GetMyReview} = require('../Controllers/ReviewController');
+const { AuthCheck } = require('../Controllers/AuthController.js');
+const { GetProductReviews, CreateReview, UpdateMyReview, DeleteMyReview, GetMyReview} = require('../Controllers/ReviewController.js');
 
 const ReviewRouter = express.Router();
 
