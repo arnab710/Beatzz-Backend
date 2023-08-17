@@ -13,8 +13,6 @@ exports.CheckOutSession = async(req,res) =>{
                      const eachProduct = await Product.findById(product.productID).select("name price pictures");
                      if(!eachProduct) throw new Error("No Product Found");
                      
-                     
-                     
                      return {
                             price_data: {
                                 currency: 'usd',
