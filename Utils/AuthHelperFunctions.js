@@ -60,13 +60,15 @@ exports.EmailSender = async (UserEmail,url) =>{
 }
 
 exports.jwtCookieSetter = (token) =>{
-    
+
     return (res) =>{
-        console.log(token);
+        
         res.cookie('jwt',token,{
 
             expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
             httpOnly:true,
+            sameSite: 'None',
+            secure : true  
         })
     }
 }
