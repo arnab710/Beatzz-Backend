@@ -1,5 +1,5 @@
 const express = require('express');
-const {GetAllUsers,CreateNewUser,GetOneUser,UpdateUser,DeleteUser, UpdateMe, DeleteMyAccount, LogOut, checkcache,MyDetails } = require('../Controllers/Usercontroller.js');
+const {GetAllUsers,CreateNewUser,GetOneUser,UpdateUser,DeleteUser, UpdateMe, DeleteMyAccount, LogOut, checkcache,MyDetails } = require('../Controllers/UserController.js');
 const { SignUp, Login, AuthCheck, RoleCheck, ForgotPassword, ResetPassword, ChangePassword } = require('../Controllers/AuthController.js');
 
 const UserRouter = express.Router();
