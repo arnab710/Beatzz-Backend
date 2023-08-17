@@ -6,7 +6,6 @@ exports.CheckOutSession = async(req,res) =>{
 
        try{
               const productDetails = req.body;
-
               let completeProductObject = [];
               const completeProductObjectPromise = productDetails.map(async(product)=>{
 
@@ -29,18 +28,15 @@ exports.CheckOutSession = async(req,res) =>{
               completeProductObject =  await Promise.all(completeProductObjectPromise);
               
               if(completeProductObject.length===0) return res.status(400).json({result:'fail',message:'No Valid Product Found'});
-
+              
               const order = new Order({userID:req.user._id,products:productDetails});
               await order.save();
-
               const session = await stripe.checkout.sessions.create({
                      line_items: completeProductObject,
                      mode: 'payment',
                      success_url: `${process.env.FRONTEND_ORIGIN}/my-orders`,
                      cancel_url: `${process.env.FRONTEND_ORIGIN}/cart`,
                    });
-                   console.log(process.env.FRONTEND_ORIGIN);
-
                  return res.status(200).json({result:"pass/fail",url:session.url});
        }
        catch(err){
