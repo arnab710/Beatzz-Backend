@@ -39,6 +39,7 @@ exports.CheckOutSession = async(req,res) =>{
                      success_url: `${process.env.FRONTEND_ORIGIN}/my-orders`,
                      cancel_url: `${process.env.FRONTEND_ORIGIN}/cart`,
                    });
+                   console.log(process.env.FRONTEND_ORIGIN);
 
                  return res.status(200).json({result:"pass/fail",url:session.url});
        }
