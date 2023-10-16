@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(SecurityMiddleware);
 
 app.get("/", (req, res) => {
-	res.json({ ok });
+	res.json({ status: "ok" });
 });
 
 //path middlewares
