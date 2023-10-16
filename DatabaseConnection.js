@@ -5,6 +5,7 @@ const dbConnection = async()=>{
 
     try{
     await mongoose.connect(DbString);
+    console.log("DB Connected");
     }
     catch(err){
         process.exit(1); // Exit process with failure
