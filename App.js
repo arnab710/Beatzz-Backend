@@ -23,10 +23,6 @@ app.use(express.json());
 //security middleware
 app.use(SecurityMiddleware);
 
-app.get("/", (req, res) => {
-	res.json({ status: "ok" });
-});
-
 //path middlewares
 app.use(`/${api}/users`, UserRouter);
 app.use(`/${api}/products`, ProductRouter);
