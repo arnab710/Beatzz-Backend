@@ -26,7 +26,7 @@ const server = () => {
 			});
 		} else {
 			const port = process.env.PORT || 8000;
-			const serverMain = app.listen(port, () => {
+			app.listen(port, () => {
 				if (process.env.NODE_ENV === "development") console.log("listening");
 			});
 		}
